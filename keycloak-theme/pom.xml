@@ -22,6 +22,7 @@
     <artifactId>keycloak-admin-ui</artifactId>
     <version>15.1.0</version>
     <name>Keycloak Administration UI</name>
+    <description>Keycloak Administration UI</description>
 
     <licenses>
         <license>
