@@ -59,17 +59,19 @@
         </repository>
     </distributionManagement>
     
-    <profile>
-        <id>nexus-staging</id>
-        <build>
-            <plugins>
+    <profiles>
+        <profile>
+           <id>nexus-staging</id>
+           <build>
+              <plugins>
                 <plugin>
-                    <groupId>org.sonatype.plugins</groupId>
-                    <artifactId>nexus-staging-maven-plugin</artifactId>
-                </plugin>
-            </plugins>
-        </build>
-    </profile>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <build>
         <pluginManagement>
