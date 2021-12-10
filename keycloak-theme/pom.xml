@@ -23,6 +23,10 @@
     <version>15.1.0</version>
     <name>Keycloak Administration UI</name>
     <description>Keycloak Administration UI</description>
+    
+    <properties>
+        <nexus.staging.plugin.version>1.6.5</nexus.staging.plugin.version>
+    </properties>
 
     <licenses>
         <license>
@@ -54,8 +58,35 @@
             <url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
+    
+    <profile>
+        <id>nexus-staging</id>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>${nexus.staging.plugin.version}</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <nexusUrl>https://repository.jboss.org/nexus</nexusUrl>
+                        <serverId>jboss-releases-repository</serverId>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        
         <plugins>
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
