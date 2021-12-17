@@ -20,7 +20,7 @@
 
     <groupId>org.keycloak</groupId>
     <artifactId>keycloak-admin-ui</artifactId>
-    <version>15.1.0</version>
+    <version>15.1.1</version>
     <name>Keycloak Administration UI</name>
     <description>Keycloak Administration UI</description>
     
